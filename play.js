@@ -1,17 +1,7 @@
-const connect = require('./client')
+const { connect } = require("./client");
+const { setupInput } = require("./input");
 
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
+console.log("Connecting ...");
+connect();
 
-  const handleUserInput = function () {
-  stdin.on("data", (key) => {
-    
-  })
-  }
-
-  handleUserInput()
-  return stdin;
-};
+setupInput();
